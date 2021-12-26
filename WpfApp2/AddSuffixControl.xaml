@@ -6,13 +6,19 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="Addsuffix" Height="200" Width="250" Background="AliceBlue">
-    <Grid>
-        <TextBlock Text="Add suffix "  Foreground="Blue" FontWeight="Bold"   Margin="10,6,10,135" ></TextBlock>
+    <Grid >
+        <TextBlock Text="Add Suffix" Foreground="Blue" FontWeight="Bold"
+                   Margin="10,6,10,135"></TextBlock>
 
-        <TextBox Name="NeedleTextBox" Text="" Margin="10,54,148,83"/>
+
+
+        <TextBlock Text="String" Margin="10,35,148,106"></TextBlock>
+        <TextBox Name="SuffixTextBox" Text="" Margin="10,54,148,83"/>
+
+
         <Button Height="20" Width="50" HorizontalAlignment="Right"
-                                Margin="10,130,10,10" Content="Choice"
+                                Margin="0,130,10,10"
+                                Content="Choicet"
                                 Click="choiceButton_Click"></Button>
-
     </Grid>
 </Window>

@@ -17,7 +17,7 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for AddcounterControl.xaml
     /// </summary>
-    public partial class AddcounterControl : Window
+    public partial class AddcounterControl : ArgumentForStringActionControl
     {
         public AddcounterControl()
         {
@@ -26,6 +26,24 @@ namespace WpfApp2
 
         private void choiceButton_Click(object sender, RoutedEventArgs e)
         {
+            // get arguments
+
+            string start = StartTextBox.Text;
+            string step = StepTextBox.Text;
+
+            List<string> arguments = new List<string>()
+            {
+                start,
+                step
+            };
+
+            RaiseEventHandler(arguments);
+        }
+        override public void Clear()
+        {
+
+            StartTextBox.Text = "";
+            StepTextBox.Text = "";
 
         }
     }

@@ -64,38 +64,48 @@
     <Compile Include="AddcounterControl.xaml.cs">
       <DependentUpon>AddcounterControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddPrefix.xaml.cs">
-      <DependentUpon>AddPrefix.xaml</DependentUpon>
+    <Compile Include="AddCounterRule.cs" />
+    <Compile Include="AddPrefixControl.xaml.cs">
+      <DependentUpon>AddPrefixControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Addsuffix.xaml.cs">
-      <DependentUpon>Addsuffix.xaml</DependentUpon>
+    <Compile Include="AddPrefixRule.cs" />
+    <Compile Include="AddSuffixControl.xaml.cs">
+      <DependentUpon>AddSuffixControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
-    <Compile Include="LowerCase_RemoveSpaces.xaml.cs">
-      <DependentUpon>LowerCase_RemoveSpaces.xaml</DependentUpon>
+    <Compile Include="AddSuffixRule.cs" />
+    <Compile Include="ArgumentForStringActionControl.cs" />
+    <Compile Include="PascalCaseNameRule.cs" />
+    <Compile Include="ReplaceControlRule.cs" />
+    <Compile Include="RuleGUI.cs" />
+    <Compile Include="Rules.cs" />
+    <Compile Include="LowerCase_RemoveSpacesControl.xaml.cs">
+      <DependentUpon>LowerCase_RemoveSpacesControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PascalCaseName.xaml.cs">
-      <DependentUpon>PascalCaseName.xaml</DependentUpon>
+    <Compile Include="LowerCase_RemoveSpacesRule.cs" />
+    <Compile Include="PascalCaseNameControl.xaml.cs">
+      <DependentUpon>PascalCaseNameControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RemoveSpace.xaml.cs">
-      <DependentUpon>RemoveSpace.xaml</DependentUpon>
+    <Compile Include="RemoveSpaceControl.xaml.cs">
+      <DependentUpon>RemoveSpaceControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RemoveSpaceRule.cs" />
     <Compile Include="ReplaceControl.xaml.cs">
       <DependentUpon>ReplaceControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UseDefinedType.cs" />
     <Page Include="AddcounterControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AddPrefix.xaml">
+    <Page Include="AddPrefixControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Addsuffix.xaml">
+    <Page Include="AddSuffixControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LowerCase_RemoveSpaces.xaml">
+    <Page Include="LowerCase_RemoveSpacesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -111,11 +121,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PascalCaseName.xaml">
+    <Page Include="PascalCaseNameControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RemoveSpace.xaml">
+    <Page Include="RemoveSpaceControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,14 +17,42 @@ namespace WpfApp2
     /// <summary>
     /// Interaction logic for ReplaceControl.xaml
     /// </summary>
-    public partial class ReplaceControl : Window
+    public partial class ReplaceControl : ArgumentForStringActionControl
     {
         public ReplaceControl()
         {
             InitializeComponent();
+
         }
 
         private void choiceButton_Click(object sender, RoutedEventArgs e)
+        {
+            // get arguments
+            var areaSelected = AreaComboBox.SelectedItem as ComboBoxItem;
+            string area = areaSelected.Content as string;
+            string needle = NeedleTextBox.Text;
+            string hammer = HammerTextBox.Text;
+
+            // send to parent class
+            List<string> arguments = new List<string>()
+            {
+                needle,
+                hammer,
+                area
+            };
+
+            RaiseEventHandler(arguments);
+
+        }
+        override public void Clear()
+        {
+            AreaComboBox.SelectedIndex = 0;
+            NeedleTextBox.Text = "";
+            HammerTextBox.Text = "";
+
+        }
+
+        private void AreaComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -6,19 +6,15 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
                Title=" Name PascalCase" Height="200" Width="250" Background="AliceBlue">
-    <Grid>
-        <TextBlock Text=" Name PascalCase"  Foreground="Blue" FontWeight="Bold"   Margin="10,6,10,135"></TextBlock>
+    <Grid >
+        <TextBlock Text="Name PascalCase"  Foreground="Blue" FontWeight="Bold" 
+                   Margin="10,6,10,135"></TextBlock>
 
-        <ListView Name="MainListView" Margin="10,46,85,48" SelectedIndex="0">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding Value}"></TextBlock>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+
 
         <Button Height="20" Width="50" HorizontalAlignment="Right"
-                                Margin="10,130,10,10" Content="Choice"
+                                Margin="0,130,10,10"
+                                Content="Choice"
                                 Click="choiceButton_Click"></Button>
 
     </Grid>

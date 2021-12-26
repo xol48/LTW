@@ -7,12 +7,11 @@
         mc:Ignorable="d"
               d:DesignHeight="200" d:DesignWidth="250" Background="AliceBlue">
     <Grid >
-        <TextBlock Text="Replace" 
-                   FontWeight="Bold"
+        <TextBlock Text="Replace"  Foreground="Blue" FontWeight="Bold" 
                    Margin="10,6,10,135"></TextBlock>
 
         <TextBlock Text="Apply to" Margin="150,35,10,106"/>
-        <ComboBox Name ="AreaComboBox" Margin="150,54,10,83">
+        <ComboBox Name ="AreaComboBox" Margin="150,54,10,83" SelectionChanged="AreaComboBox_SelectionChanged">
             <ComboBoxItem Content="" IsSelected="True"></ComboBoxItem>
             <ComboBoxItem Content=""></ComboBoxItem>
         </ComboBox>

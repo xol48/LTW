@@ -27,3 +27,8 @@ E:\WpfApp2\WpfApp2\obj\Debug\LowerCase_RemoveSpaces.baml
 E:\WpfApp2\WpfApp2\obj\Debug\PascalCaseName.baml
 E:\WpfApp2\WpfApp2\obj\Debug\RemoveSpace.baml
 E:\WpfApp2\WpfApp2\obj\Debug\ReplaceControl.baml
+E:\WpfApp2\WpfApp2\obj\Debug\AddPrefixControl.g.cs
+E:\WpfApp2\WpfApp2\obj\Debug\AddSuffixControl.g.cs
+E:\WpfApp2\WpfApp2\obj\Debug\LowerCase_RemoveSpacesControl.g.cs
+E:\WpfApp2\WpfApp2\obj\Debug\PascalCaseNameControl.g.cs
+E:\WpfApp2\WpfApp2\obj\Debug\RemoveSpaceControl.g.cs

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+
 namespace WpfApp2
 {
-    class Class1 : UserControl
+    public abstract class ArgumentForStringActionControl : UserControl
     {
-        public event 
+
+        public event TypeEventHandler.NewArgumentEventHandler NewArgumentEvent;
 
         /// <summary>
         /// notify parent class
@@ -23,5 +25,6 @@ namespace WpfApp2
         /// clear all arguments
         /// </summary>
         virtual public void Clear() { }
+
     }
 }

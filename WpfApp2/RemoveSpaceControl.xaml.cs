@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for Addsuffix.xaml
+    /// Interaction logic for RemoveSpace.xaml
     /// </summary>
-    public partial class Addsuffix : Window
+    public partial class RemoveSpace : ArgumentForStringActionControl
     {
-        public Addsuffix()
+        public RemoveSpace()
         {
             InitializeComponent();
         }

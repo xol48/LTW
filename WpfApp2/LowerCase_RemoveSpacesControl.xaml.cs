@@ -15,19 +15,29 @@ using System.Windows.Shapes;
 namespace WpfApp2
 {
     /// <summary>
-    /// Interaction logic for AddPrefix.xaml
+    /// Interaction logic for LowerCase_RemoveSpaces.xaml
     /// </summary>
-    public partial class AddPrefix : Window
+    public partial class LowerCase_RemoveSpaces : Window
     {
-        public AddPrefix()
+        public LowerCase_RemoveSpaces()
         {
             InitializeComponent();
         }
 
         private void choiceButton_Click(object sender, RoutedEventArgs e)
         {
+            
 
+
+            List<string> arguments = new List<string>() {  };
+
+            //RaiseEventHandler(arguments);
         }
-    }
 
+        /*  override public void Clear()
+          {
+              AddPrefixTextBox.Text = "";
+          }
+        */
+    }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\WpfApp2\WpfApp2\App.xaml
-82088769888
+81703746668
 
-141872269947
+241162957168
 15-172764576
-AddcounterControl.xaml;AddPrefix.xaml;Addsuffix.xaml;LowerCase_RemoveSpaces.xaml;MainWindow.xaml;PascalCaseName.xaml;RemoveSpace.xaml;ReplaceControl.xaml;
+AddcounterControl.xaml;AddPrefixControl.xaml;AddSuffixControl.xaml;LowerCase_RemoveSpacesControl.xaml;MainWindow.xaml;PascalCaseNameControl.xaml;RemoveSpaceControl.xaml;ReplaceControl.xaml;
 
 True
 

@@ -14,18 +14,28 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Interaction logic for LowerCase_RemoveSpaces.xaml
-    /// </summary>
-    public partial class LowerCase_RemoveSpaces : Window
+    public partial class Addsuffix : Window
     {
-        public LowerCase_RemoveSpaces()
+        public Addsuffix()
         {
             InitializeComponent();
         }
 
         private void choiceButton_Click(object sender, RoutedEventArgs e)
         {
+
+            string suffix = SuffixTextBox.Text;
+
+            List<string> arguments = new List<string>()
+            {
+                suffix
+            };
+
+            RaiseEventHandler(arguments);
+        }
+        override public void Clear()
+        {
+            SuffixTextBox.Text = "";
 
         }
     }
