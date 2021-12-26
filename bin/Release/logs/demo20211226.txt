@@ -1,0 +1,194 @@
+2021-12-26 13:21:18.377 +07:00 [INF] MainWindow: Init
+2021-12-26 14:08:22.339 +07:00 [INF] MainWindow: Init
+2021-12-26 14:10:44.204 +07:00 [INF] MainWindow: Init
+2021-12-26 14:11:30.125 +07:00 [INF] MainWindow: Init
+2021-12-26 14:11:36.932 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:12:22.251 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 14:12:22.252 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 14:12:25.442 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:12:25.448 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 14:28:09.808 +07:00 [INF] MainWindow: Init
+2021-12-26 14:28:38.675 +07:00 [INF] MainWindow: Init
+2021-12-26 14:30:58.642 +07:00 [INF] MainWindow: Init
+2021-12-26 14:31:56.801 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:32:00.074 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:32:00.077 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 14:32:19.172 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:32:19.286 +07:00 [ERR] BatchFileButton_Click: Could not find file 'E:\test\75a - Copy (2).txt'.
+2021-12-26 14:32:19.314 +07:00 [ERR] BatchFileButton_Click: Could not find file 'E:\test\75a - Copy - Copy.txt'.
+2021-12-26 14:32:19.337 +07:00 [ERR] BatchFileButton_Click: Could not find file 'E:\test\75a - Copy.txt'.
+2021-12-26 14:32:19.359 +07:00 [ERR] BatchFileButton_Click: Could not find file 'E:\test\75a.txt'.
+2021-12-26 14:32:19.363 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 14:33:19.248 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:33:21.112 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 14:33:21.147 +07:00 [WRN] PreviewFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:33:21.167 +07:00 [WRN] PreviewFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:33:21.187 +07:00 [WRN] PreviewFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:33:21.205 +07:00 [WRN] PreviewFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:33:21.226 +07:00 [WRN] PreviewFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:33:21.226 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 14:34:14.545 +07:00 [INF] MainWindow: Init
+2021-12-26 14:34:18.624 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:34:30.066 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:34:36.424 +07:00 [ERR] BatchFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:34:37.860 +07:00 [ERR] BatchFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:34:38.643 +07:00 [ERR] BatchFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:34:39.626 +07:00 [ERR] BatchFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:35:15.449 +07:00 [ERR] BatchFileButton_Click: Index was outside the bounds of the array.
+2021-12-26 14:35:45.207 +07:00 [INF] MainWindow: Init
+2021-12-26 14:35:55.545 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:35:56.408 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 14:35:56.409 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 14:35:59.512 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:35:59.519 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 14:43:33.358 +07:00 [INF] MainWindow: Init
+2021-12-26 14:44:05.696 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:44:06.872 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 14:44:06.873 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 14:44:27.704 +07:00 [INF] MainWindow: Init
+2021-12-26 14:44:40.802 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 14:44:47.023 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 14:44:47.024 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 14:44:50.538 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 14:44:50.543 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 15:42:09.520 +07:00 [INF] MainWindow: Init
+2021-12-26 16:24:25.454 +07:00 [INF] MainWindow: Init
+2021-12-26 16:40:35.459 +07:00 [INF] MainWindow: Init
+2021-12-26 16:41:29.848 +07:00 [INF] MainWindow: Init
+2021-12-26 16:41:43.005 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:41:50.716 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 16:41:50.717 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 16:41:55.032 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:41:55.036 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:43:33.220 +07:00 [INF] MainWindow: Init
+2021-12-26 16:46:50.689 +07:00 [INF] MainWindow: Init
+2021-12-26 16:48:34.575 +07:00 [INF] MainWindow: Init
+2021-12-26 16:50:17.659 +07:00 [INF] MainWindow: Init
+2021-12-26 16:50:41.437 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:50:43.667 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 16:50:43.668 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 16:50:47.233 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:50:47.405 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:50:47.448 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:50:47.495 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:50:47.499 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:51:58.722 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:52:03.729 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:52:39.334 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:53:05.934 +07:00 [INF] MainWindow: Init
+2021-12-26 16:53:56.096 +07:00 [INF] MainWindow: Init
+2021-12-26 16:54:58.483 +07:00 [INF] MainWindow: Init
+2021-12-26 16:55:10.918 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:55:10.919 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:55:15.330 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:55:19.974 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:55:19.979 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:56:52.712 +07:00 [INF] MainWindow: Init
+2021-12-26 16:57:02.098 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:57:12.257 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 16:57:12.258 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 16:57:19.199 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:57:19.246 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:57:19.256 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:57:19.265 +07:00 [ERR] BatchFileButton_Click: Could not find a part of the path.
+2021-12-26 16:57:19.268 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:58:06.800 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:58:14.689 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 16:58:14.689 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 16:58:17.526 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:58:17.530 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:58:41.665 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:58:52.079 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:58:52.103 +07:00 [ERR] BatchFileButton_Click: Illegal characters in path.
+2021-12-26 16:58:52.131 +07:00 [ERR] BatchFileButton_Click: Illegal characters in path.
+2021-12-26 16:58:52.161 +07:00 [ERR] BatchFileButton_Click: Illegal characters in path.
+2021-12-26 16:58:52.162 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:59:17.584 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 16:59:25.279 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 16:59:25.285 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 16:59:55.913 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:00:02.068 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:00:02.071 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:00:24.864 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:00:31.679 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:00:31.679 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:01:13.024 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:01:20.372 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:01:20.377 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:01:37.392 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:01:46.879 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:01:46.885 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:02:03.048 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:02:11.669 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:02:11.673 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:05:30.229 +07:00 [INF] MainWindow: Init
+2021-12-26 17:22:13.892 +07:00 [INF] MainWindow: Init
+2021-12-26 17:25:42.395 +07:00 [INF] MainWindow: Init
+2021-12-26 17:30:30.227 +07:00 [INF] MainWindow: Init
+2021-12-26 17:31:01.225 +07:00 [INF] MainWindow: Init
+2021-12-26 17:31:05.430 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:31:10.879 +07:00 [INF] PreviewFileButton_Click: Init
+2021-12-26 17:31:10.879 +07:00 [INF] PreviewFileButton_Click: End
+2021-12-26 17:31:13.657 +07:00 [INF] BatchFileButton_Click: Init
+2021-12-26 17:31:13.661 +07:00 [INF] BatchFileButton_Click: End
+2021-12-26 17:35:26.036 +07:00 [INF] MainWindow: Init
+2021-12-26 17:37:13.927 +07:00 [INF] MainWindow: Init
+2021-12-26 17:37:40.090 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 17:38:56.520 +07:00 [INF] MainWindow: Init
+2021-12-26 17:39:19.337 +07:00 [INF] MainWindow: Init
+2021-12-26 17:46:57.166 +07:00 [INF] MainWindow: Init
+2021-12-26 18:25:18.465 +07:00 [INF] MainWindow: Init
+2021-12-26 18:26:56.235 +07:00 [INF] MainWindow: Init
+2021-12-26 18:27:02.472 +07:00 [INF] MainWindow: Init
+2021-12-26 18:27:44.422 +07:00 [INF] MainWindow: Init
+2021-12-26 18:36:59.004 +07:00 [INF] MainWindow: Init
+2021-12-26 18:39:51.737 +07:00 [INF] MainWindow: Init
+2021-12-26 18:40:25.909 +07:00 [INF] MainWindow: Init
+2021-12-26 18:42:44.019 +07:00 [INF] MainWindow: Init
+2021-12-26 18:43:02.260 +07:00 [INF] MainWindow: Init
+2021-12-26 18:44:59.231 +07:00 [INF] MainWindow: Init
+2021-12-26 18:45:18.058 +07:00 [INF] MainWindow: Init
+2021-12-26 19:10:06.540 +07:00 [INF] MainWindow: Init
+2021-12-26 19:10:19.074 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:10:22.671 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:10:26.749 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:11:00.569 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-26 19:19:01.498 +07:00 [INF] MainWindow: Init
+2021-12-26 19:19:06.633 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-26 19:19:47.257 +07:00 [INF] MainWindow: Init
+2021-12-26 19:20:35.660 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-26 19:23:14.443 +07:00 [INF] MainWindow: Init
+2021-12-26 19:23:19.297 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-26 19:24:04.467 +07:00 [INF] MainWindow: Init
+2021-12-26 19:45:48.757 +07:00 [INF] MainWindow: Init
+2021-12-26 19:45:54.940 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:46:00.866 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:47:18.304 +07:00 [INF] MainWindow: Init
+2021-12-26 19:48:14.947 +07:00 [INF] MainWindow: Init
+2021-12-26 19:58:49.886 +07:00 [INF] MainWindow: Init
+2021-12-26 19:58:52.849 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:58:58.593 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:59:04.192 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 19:59:21.886 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-26 20:28:07.601 +07:00 [INF] MainWindow: Init
+2021-12-26 20:28:34.936 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 20:28:37.357 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 20:31:50.881 +07:00 [INF] MainWindow: Init
+2021-12-26 20:35:59.651 +07:00 [INF] MainWindow: Init
+2021-12-26 20:38:52.877 +07:00 [INF] MainWindow: Init
+2021-12-26 20:43:07.725 +07:00 [INF] MainWindow: Init
+2021-12-26 20:55:30.487 +07:00 [INF] MainWindow: Init
+2021-12-26 21:02:00.639 +07:00 [INF] MainWindow: Init
+2021-12-26 21:02:04.147 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 21:02:31.130 +07:00 [INF] MainWindow: Init
+2021-12-26 21:02:34.411 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 21:02:37.259 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-26 21:02:55.130 +07:00 [INF] MainWindow: Init
+2021-12-26 21:03:43.730 +07:00 [INF] MainWindow: Init
+2021-12-26 21:36:13.618 +07:00 [INF] MainWindow: Init
+2021-12-26 21:42:52.696 +07:00 [INF] MainWindow: Init

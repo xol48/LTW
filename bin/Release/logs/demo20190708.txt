@@ -1,0 +1,15 @@
+2019-07-08 12:41:48.156 +07:00 [INF] MainWindow: Init
+2019-07-08 12:42:05.126 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2019-07-08 12:42:06.758 +07:00 [INF] PreviewFolderButton_Click: Init
+2019-07-08 12:42:06.759 +07:00 [INF] PreviewFolderButton_Click: End
+2019-07-08 12:42:15.787 +07:00 [INF] BatchFolderButton_Click: Init
+2019-07-08 12:42:15.872 +07:00 [INF] BatchFolderButton_Click: End
+2019-07-08 12:42:30.843 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2019-07-08 12:42:36.341 +07:00 [INF] BatchFolderButton_Click: Init
+2019-07-08 12:42:36.346 +07:00 [INF] BatchFolderButton_Click: End
+2019-07-08 12:44:04.480 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2019-07-08 12:44:13.430 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2019-07-08 12:44:15.262 +07:00 [INF] PreviewFolderButton_Click: Init
+2019-07-08 12:44:15.262 +07:00 [INF] PreviewFolderButton_Click: End
+2019-07-08 12:44:19.795 +07:00 [INF] BatchFolderButton_Click: Init
+2019-07-08 12:44:19.811 +07:00 [INF] BatchFolderButton_Click: End
