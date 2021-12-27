@@ -16,20 +16,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using Serilog;
+
 
 namespace BatchRename
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         // list of actions with arguments provided and supposed to be performed
-        BindingList<Rules> addList;
+        BindingList<Rules> choiceList;
 
         // list of actions displayed to user to select and modify arguments
-        BindingList<Rule_Control> actionList;
+        BindingList<Rule_Control> ruleList;
 
         // list of filenames added to listview
         BindingList<Filename> filenameList;
@@ -37,8 +34,6 @@ namespace BatchRename
         // list of foldernames added to listview
         BindingList<Foldername> foldernameList;
 
-        // option when name collision, default is make new name, it can be modified in Option child window
-        int NameCollisionOption = OptionsWindow.NewName;
 
         // list of images which located in 'Images' folder
 
@@ -50,12 +45,7 @@ namespace BatchRename
 
 
             // create log file
-            Log.Logger = new LoggerConfiguration().
-                                 MinimumLevel.Debug().
-                                 WriteTo.File("logs\\demo.txt", rollingInterval: RollingInterval.Day).
-                                 CreateLogger();
 
-            Log.Information("MainWindow: Init");
 
 
             // main grid binds to this class
@@ -65,7 +55,7 @@ namespace BatchRename
 
             // list of possible actions for user to select
             // when user configured arguments, a new action instance created and send to main window
-            actionList = new BindingList<Rule_Control>
+            ruleList = new BindingList<Rule_Control>
             {
                 new Rule_Control(new AddPrefixRule(){ }, new AddPrefixControl()),
                 new Rule_Control(new AddSuffixRule(){ }, new AddSuffixControl()),
@@ -74,20 +64,21 @@ namespace BatchRename
                 new Rule_Control(new ReplaceRule(){ }, new ReplaceControl()),
                 new Rule_Control(new ChangeExtensionRule(){ }, new ChangeExtensionControl()),
                 new Rule_Control(new LC_RS_Rule(){ }, new LC_RS_Control()),
+                new Rule_Control(new AddCounterRule(){ }, new AddCounterControl()),
             };
             // add event handler when new action comes
-            foreach (var item in actionList)
+            foreach (var item in ruleList)
             {
                 item.NewActionEvent += AddNewActionToAddList;
             }
             // and a listview is binded to this list
-            ActionsListView.ItemsSource = actionList;
+            RulesListView.ItemsSource = ruleList;
 
 
             // list of instance actions which configured arguments
-            addList = new BindingList<Rules>();
+            choiceList = new BindingList<Rules>();
             // and a list is binded to this list
-            AddListListView.ItemsSource = addList;
+            AddListListView.ItemsSource = choiceList;
 
             
             // a listview binded to list of filenames 
@@ -108,39 +99,33 @@ namespace BatchRename
         {
             try
             {
-                Rule_Control actionGUI = ActionsListView.SelectedItem as Rule_Control;
-                int result = actionGUI.ShowControlToGetArgument();
+                Rule_Control RC = RulesListView.SelectedItem as Rule_Control;
+                int result = RC.ShowControlToGetArgument();
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.Error("ExpandButton_Click: " + ex.Message);
             }
             
             
         }
 
         // if many action controls are opened, click on an action will make its control appears on top
-        private void ActionButton_Click(object sender, RoutedEventArgs e)
+        private void RuleButton_Click(object sender, RoutedEventArgs e)
         {
-            Rule_Control actionGUI = ActionsListView.SelectedItem as Rule_Control;
-            UserControlGrid.Children.Remove(actionGUI.Control);
-            UserControlGrid.Children.Add(actionGUI.Control);
+            Rule_Control RC = RulesListView.SelectedItem as Rule_Control;
+            UserControlGrid.Children.Remove(RC.Control);
+            UserControlGrid.Children.Add(RC.Control);
 
         }
 
         // this is event handler when new action comes
-        public void AddNewActionToAddList(Rules action)
+        public void AddNewActionToAddList(Rules rule)
         {
-            if (action != null)
+            if (rule != null)
             {
-                addList.Add(action);
-                Log.Information("AddNewActionToAddList: " + "receive an action successfully");
-            }
-            else
-            {
-                Log.Error("AddNewActionToAddList: " + "receive a null action");
+                choiceList.Add(rule);
             }
         }
 
@@ -149,11 +134,11 @@ namespace BatchRename
         private void RemoveMenuContextAddList_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = AddListListView.SelectedItem as Rules;
-            addList.Remove(selectedItem);
+            choiceList.Remove(selectedItem);
         }
 
         // open a preset
-        private void OpenButtonAddList_click(object sender, RoutedEventArgs e)
+        private void OpenButtonChoiceList_click(object sender, RoutedEventArgs e)
         {
             // open file dialog
             System.Windows.Forms.OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog()
@@ -177,30 +162,43 @@ namespace BatchRename
             {
                 // get filename
                 string filename = openFileDialog1.FileName;
-
+                
                 // read all lines in filename
                 List<string> lines = new List<string>();
-                FileIO.ReadFromFile(filename, ref lines);
-
+ 
+                using (StreamReader sr = new StreamReader(filename))
+                {
+                    string line;
+                    // Read and display lines from the file until 
+                    // the end of the file is reached. 
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        lines.Add(line);
+                    }
+                }
                 // each line, parse arguments to corresponding action and create new action
                 foreach (var line in lines)
                 {
                     try
                     {
                         List<string> tokens = new List<string>();
-                        if (FileIO.SplitString(line, ref tokens) == 0)
+                        string[] s=line.Split(
+                        new string[] { " ", "," },
+                         StringSplitOptions.RemoveEmptyEntries);
+                        foreach (var token in s)
                         {
-                            string actionName = tokens[0];
-                            tokens.Remove(tokens[0]);
-                            List<string> actionArguments = tokens;
-
-                            var newAction = Helper.CreateAction(actionName, actionArguments);
-                            addList.Add(newAction);
+                            tokens.Add(token);
                         }
+                        string ruleName = tokens[0];
+                            tokens.Remove(tokens[0]);
+                            List<string> arguments = tokens;
+
+                            var newRule = Helper.CreateAction(ruleName, arguments);
+                            choiceList.Add(newRule);
                     }
                     catch (Exception ex)
                     {
-                        Log.Warning("OpenButtonAddList_click: " + "FileIO exception: " + ex.Message);
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -208,7 +206,7 @@ namespace BatchRename
         }
 
         // save a preset
-        private void SaveButtonAddList_Click(object sender, RoutedEventArgs e)
+        private void SaveButtonChoiceList_Click(object sender, RoutedEventArgs e)
         {
             // save file dialog
             System.Windows.Forms.SaveFileDialog saveFileDialog = new System.Windows.Forms.SaveFileDialog()
@@ -230,21 +228,33 @@ namespace BatchRename
 
 
             // make file empty
-            FileIO.WriteToFile(filename, new List<string>() { "" });
+            using (StreamWriter sw = new StreamWriter(filename))
+            {
+
+                    sw.WriteLine("");
+            }
 
             // each action will be append to file
-            foreach (var action in addList)
+            foreach (var rule in choiceList)
             {
                 StringBuilder builder = new StringBuilder();
-                List<string> keywords = action.KeyWord;
+                List<string> keywords = rule.KeyWord;
 
                 foreach (var item in keywords)
                 {
                     builder.Append(item);
                     builder.Append(" ");
                 }
-                string line = builder.ToString();
-                FileIO.AppendToFile(filename, new List<string>() { line });
+                string lines = builder.ToString();
+                using (StreamWriter sw = new StreamWriter(filename, append: true))
+                {
+
+                    foreach (string line in new List<string>() { lines })
+                    {
+                        sw.WriteLine(line);
+                    }
+
+                }
             }
 
             
@@ -305,7 +315,7 @@ namespace BatchRename
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
             // clear instances of actions
-            addList.Clear();
+            choiceList.Clear();
 
             // clear all filenames added
             filenameList.Clear();
@@ -314,51 +324,35 @@ namespace BatchRename
             foldernameList.Clear();
 
             // clear action models and their controls
-            foreach (var item in actionList)
+            foreach (var item in ruleList)
             {
                 item.Clear();
             }
         }
 
-        // show information about application
-        private void HelpButton_Click(object sender, RoutedEventArgs e)
-        {
-            string message = "An project from Window Programming Course\n"
-                + "Performed by 1753102 - Bui Quang Thang\n"
-                + "Contact: 1753102@student.hcmus.edu.vn";
 
-            string caption = "Batch Rename Information";
-
-            MessageBoxButton buttons = MessageBoxButton.OK;
-            MessageBoxImage icon = MessageBoxImage.Information;
-
-            // Show message box
-            MessageBoxResult result = MessageBox.Show(message, caption, buttons, icon);
-        }
 
 
 
         // preview new filename before renaming
         private void PreviewFolderButton_Click(object sender, RoutedEventArgs e)
         {
-            Log.Information("PreviewFolderButton_Click: Init");
-
+            int now = -1;
             foreach (var foldername in foldernameList)
             {
                 // each foldername in list
                 string newFoldername = foldername.Value;
 
                 // apply all action to that foldername
-                foreach (var action in addList)
+                foreach (var rule in choiceList)
                 {
                     try
                     {
-                        newFoldername = action.Process(newFoldername, false);
+                        newFoldername = rule.Process(newFoldername, false,ref now);
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show("Preview Foldername Exception: " + ex.Message);
-                        Log.Warning("PreviewFolderButton_Click: " + ex.Message);
+                        MessageBox.Show( ex.Message);
                     }
                 }
 
@@ -367,30 +361,27 @@ namespace BatchRename
                 foldername.ClearState();
             }
 
-            Log.Information("PreviewFolderButton_Click: End");
         }
 
         // preview new foldername before renaming
         private void PreviewFileButton_Click(object sender, RoutedEventArgs e)
         {
-            Log.Information("PreviewFileButton_Click: Init");
-
+            int now = -1;
             foreach (var filename in filenameList)
             {
                 // each filename
                 string newFilename = filename.Value;
 
                 // apply all actions to
-                foreach (var action in addList)
+                foreach (var rule in choiceList)
                 {
                     try
                     {
-                        newFilename = action.Process(newFilename, true);
+                        newFilename = rule.Process(newFilename, true,ref now);
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show("Preview Foldername Exception: " + ex.Message);
-                        Log.Warning("PreviewFileButton_Click: " + ex.Message);
+                        MessageBox.Show( ex.Message);
                     }
                 }
 
@@ -399,7 +390,6 @@ namespace BatchRename
                 filename.ClearState();
             }
 
-            Log.Information("PreviewFileButton_Click: End");
         }
 
         // rename filename
@@ -417,8 +407,7 @@ namespace BatchRename
            
             if (result == MessageBoxResult.OK)
             {
-                Log.Information("BatchFileButton_Click: Init");
-
+                int now = -1;
                 foreach (var filename in filenameList)
                 {
                     // each filename
@@ -428,19 +417,17 @@ namespace BatchRename
                     bool isSuccess = true;
 
                     // apply all actions to
-                    foreach (var action in addList)
+                    foreach (var rule in choiceList)
                     {
                         try
                         {
-                            newFilename = action.Process(newFilename, true);
+                            newFilename = rule.Process(newFilename, true,ref now);
                         }
                         catch (Exception ex)
                         {
                             isSuccess = false;
-                            filename.FailedActions += action.Description + "\n";
-
-                            //MessageBox.Show("Preview Filename Exception: " + ex.Message);
-                            Log.Error("BatchFileButton_Click: " + ex.Message);
+                            filename.FailedActions += rule.Description + "\n";
+                            MessageBox.Show( ex.Message);
                         }
                     }
 
@@ -461,14 +448,13 @@ namespace BatchRename
                             && File.Exists(newFilename))
                         {
                             
-                            if (NameCollisionOption == OptionsWindow.NewName)
-                            {
-                                // make new filename, ex: hello.txt => hello - 1.txt
+      
+           
                                 int count = 1;
                                 string sample = newFilename;
                                 while (File.Exists(newFilename))
                                 {
-                                    string difference = " - " + count.ToString();
+                                    string difference = " (" + count.ToString()+")";
                                   
                                     string extension = System.IO.Path.GetExtension(sample);
                                     newFilename= sample.Insert(sample.Length - extension.Length, difference);
@@ -477,11 +463,6 @@ namespace BatchRename
 
                                 // rename
                                 System.IO.File.Move(oldFilename, newFilename);
-                            }
-                            else if (NameCollisionOption == OptionsWindow.Skip)
-                            {
-                                // do nothing
-                            }
                         }
                         else // if filename doesnot exist
                         {
@@ -491,12 +472,10 @@ namespace BatchRename
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show(newFilename + "\n" + ex.Message);
-                        Log.Error("BatchFileButton_Click: " + ex.Message);
+                        MessageBox.Show(ex.Message);
                     }
                 }
 
-                Log.Information("BatchFileButton_Click: End");
             }
 
         }
@@ -504,7 +483,6 @@ namespace BatchRename
         // rename foldername
         private void BatchFolderButton_Click(object sender, RoutedEventArgs e)
         {
-            // show message box warns user about options selected such as: make new name or skip, ...
             string message = "Some final result will be different with preview result due to options\n"
                 + "Are you sure to continue?";
             string caption = "Warning";
@@ -516,8 +494,7 @@ namespace BatchRename
 
             if (result == MessageBoxResult.OK)
             {
-                Log.Information("BatchFolderButton_Click: Init");
-
+                int now = -1;
                 foreach (var foldername in foldernameList)
                 {
                     // each foldername
@@ -527,19 +504,18 @@ namespace BatchRename
                     bool isSuccess = true;
 
                     // apply all actions to
-                    foreach (var action in addList)
+                    foreach (var rule in choiceList)
                     {
                         try
                         {
-                            newFoldername = action.Process(newFoldername, false);
+                            newFoldername = rule.Process(newFoldername, false,ref now);
                         }
                         catch (Exception ex)
                         {
                             isSuccess = false;
-                            foldername.FailedActions += action.Description + "\n";
+                            foldername.FailedActions += rule.Description + "\n";
 
-                            //MessageBox.Show("Preview Foldername Exception: " + ex.Message);
-                            Log.Error("BatchFolderButton_Click: " + ex.Message);
+                            MessageBox.Show(ex.Message);
                         }
                     }
 
@@ -549,7 +525,6 @@ namespace BatchRename
                         foldername.BatchState = "Fail";
                     }
 
-                    // after getting new foldername, we rename foldername
                     foldername.NewFoldername = newFoldername;
                     try
                     {
@@ -561,19 +536,16 @@ namespace BatchRename
                             && Directory.Exists(newFoldername))
                         {
                             
-                            if (NameCollisionOption == OptionsWindow.NewName)
-                            {
                                 // make new foldername
                                 int count = 1;
                                 string sample = newFoldername;
                                 while (Directory.Exists(newFoldername))
                                 {
-                                    string difference = " - " + count.ToString();
+                                    string difference = " (" + count.ToString()+")";
                                     newFoldername = sample.Insert(sample.Length, difference);
                                     count++;
                                 }
 
-                                // rename
 				// generate a GUID
             			Guid g = Guid.NewGuid();
             			string guidString = g.ToString();
@@ -582,11 +554,8 @@ namespace BatchRename
                                 System.IO.Directory.Move(oldFoldername, oldFoldernameGUID);
 				System.IO.Directory.Move(oldFoldernameGUID, newFoldername);
                             }
-                            else if (NameCollisionOption == OptionsWindow.Skip)
-                            {
-                                // do nothing
-                            }
-                        }
+
+                        
                         else // if foldername doesnot exist, just rename
                         {
                             //System.IO.Directory.Move(oldFoldername, newFoldername);
@@ -604,12 +573,9 @@ namespace BatchRename
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show(ex.Message);
-                        Log.Error("BatchFolderButton_Click: " + ex.Message);
+                        MessageBox.Show(ex.Message);
                     }
                 }
-
-                Log.Information("BatchFolderButton_Click: End");
             }
         }
 
@@ -628,71 +594,7 @@ namespace BatchRename
             filenameList.Remove(item);
         }
 
-       
-        // remove all actions from action added list
-        private void RemoveAllActions_Click(object sender, RoutedEventArgs e)
-        {
-            addList.Clear();
-        }
 
 
-        // open option child window
-        private void OptionButton_Click(object sender, RoutedEventArgs e)
-        {
-            // create new option window
-            OptionsWindow childOptionsWindow = new OptionsWindow();
-            bool? result = childOptionsWindow.ShowDialog();
-
-            if (result == true)
-            {
-                // get option selected
-                this.NameCollisionOption = childOptionsWindow.NameCollisionOption;
-            }
-        }
-
-        // after we rename some files in a path, we need to refresh all filenames in that path
-        private void RefreshFiles_Click(object sender, RoutedEventArgs e)
-        {
-            if (filenameList != null && filenameList.Count > 0)
-            {
-                string path = filenameList[0].Path;
-                filenameList.Clear();
-
-                try
-                {
-                    string[] filenames = Directory.GetFiles(path);
-
-                    foreach (var filename in filenames)
-                    {
-                        string newFilename = filename.Remove(0, path.Length);
-                        filenameList.Add(new Filename() { Value = newFilename, Path = path });
-                    }
-                }
-                catch (Exception) { }
-            }
-        }
-
-        // after we rename some folders in a path, we need to refresh all foldernames in that path
-        private void RefreshFolders_Click(object sender, RoutedEventArgs e)
-        {
-            if (foldernameList != null && foldernameList.Count > 0)
-            {
-                string path = foldernameList[0].Path;
-                foldernameList.Clear();
-
-                try
-                {
-                    string[] foldernames = Directory.GetDirectories(path);
-
-                    foreach (var foldername in foldernames)
-                    {
-                        string newFoldername = foldername.Remove(0, path.Length);
-                        foldernameList.Add(new Foldername() { Value = newFoldername, Path = path });
-                    }
-                }
-                catch (Exception) { }
-
-            }
-        }
     }
 }

@@ -1,0 +1,47 @@
+2021-12-27 05:26:47.735 +07:00 [INF] MainWindow: Init
+2021-12-27 05:26:53.012 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:26:55.611 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:29:31.762 +07:00 [INF] MainWindow: Init
+2021-12-27 05:29:34.637 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:29:36.653 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:29:53.631 +07:00 [INF] MainWindow: Init
+2021-12-27 05:29:57.979 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:29:59.973 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:31:18.211 +07:00 [INF] MainWindow: Init
+2021-12-27 05:31:23.234 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:31:42.214 +07:00 [INF] MainWindow: Init
+2021-12-27 05:31:50.513 +07:00 [INF] MainWindow: Init
+2021-12-27 05:31:55.153 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:32:12.108 +07:00 [INF] MainWindow: Init
+2021-12-27 05:32:16.764 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:33:16.488 +07:00 [INF] MainWindow: Init
+2021-12-27 05:33:21.080 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:33:29.518 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:33:32.036 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:37:28.611 +07:00 [INF] MainWindow: Init
+2021-12-27 05:37:32.635 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:37:34.891 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:37:51.422 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:39:56.585 +07:00 [INF] MainWindow: Init
+2021-12-27 05:40:00.139 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:40:02.220 +07:00 [INF] AddNewActionToAddList: receive an action successfully
+2021-12-27 05:40:32.299 +07:00 [INF] MainWindow: Init
+2021-12-27 05:40:46.516 +07:00 [INF] MainWindow: Init
+2021-12-27 05:40:50.823 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:40:58.203 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 05:41:42.521 +07:00 [INF] MainWindow: Init
+2021-12-27 05:41:47.193 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 06:04:22.745 +07:00 [INF] MainWindow: Init
+2021-12-27 06:04:28.949 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+2021-12-27 06:16:25.316 +07:00 [INF] MainWindow: Init
+2021-12-27 06:16:31.774 +07:00 [WRN] OpenButtonAddList_click: FileIO exception: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index

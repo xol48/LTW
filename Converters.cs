@@ -8,43 +8,25 @@ using System.Windows.Data;
 
 namespace BatchRename
 {
-    public class ActionToTitleConverter : IValueConverter
+    public class NameToTitleConverter : IValueConverter
     {
         // static instance
-        public static readonly ActionToTitleConverter Instance = new ActionToTitleConverter();
+        public static readonly NameToTitleConverter Instance = new NameToTitleConverter();
 
         // convert action classname to title, example: 'NewCaseAction' => 'New Case'
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            string haystack = value as string;
+            string input = value as string;
             string result = "";
-
-            // insert spaces
-            foreach (var character in haystack)
+            input =input.Replace("Rule","");
+            foreach( var c in input)
             {
-                char charValue = character;
-                if (charValue >= (char)65 && charValue <= (char)90)
+                if(c>='A' && c<='Z')
                 {
-                    result += ' '.ToString() + character.ToString();
+                    result += " ";
                 }
-                else
-                {
-                    result += character.ToString();
-                }
+                result += c;
             }
-
-            // remove 'action'
-            string target = "Action";
-            int index = result.IndexOf(target);
-            if (index >= 0)
-            {
-                result = result.Remove(index, target.Length);  
-            }
-
-            // remove start and end spaces
-            result = result.TrimStart(' ');
-            result = result.TrimEnd(' ');
-
             return result;
         }
 
@@ -54,25 +36,5 @@ namespace BatchRename
         }
     }
 
-    public class RelativeToAbsolutePathConverter : IValueConverter
-    {
-        // static instance
-        public static readonly RelativeToAbsolutePathConverter Instance 
-                                = new RelativeToAbsolutePathConverter();
-
-        // convert relative path to absolute path
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            string relativePath = (string)value;
-
-            string absolutePath = AppDomain.CurrentDomain.BaseDirectory + relativePath;
-
-            return absolutePath;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
+   
 }

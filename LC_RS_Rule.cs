@@ -9,7 +9,7 @@ namespace BatchRename
 {
     class LC_RS_Rule:Rules
     {
-        public string ClassName => "LowerCase_RemoveSpacesRule";
+        public string ClassName => "LowerCaseRemoveSpacesRule";
 
         public List<string> KeyWord =>
             new List<string>() { ClassName };
@@ -31,11 +31,8 @@ namespace BatchRename
             return result;
         }
 
-        public string Process(string inputString, bool isFilename)
+        public string Process(string inputString, bool isFilename, ref int now)
         {
-
-
-            // split
             string input = inputString;
             string extension = "";
             if (isFilename)
@@ -43,8 +40,6 @@ namespace BatchRename
                 input = Path.GetFileNameWithoutExtension(inputString);
                 extension = inputString.Remove(0, input.Length);
             }
-
-
             return input.ToLower().Replace(" ", "") + extension;
         }
     }

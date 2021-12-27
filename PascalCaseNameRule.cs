@@ -26,7 +26,7 @@ namespace BatchRename
             return result;
         }
 
-        public string Process(string inputString, bool isFilename)
+        public string Process(string inputString, bool isFilename, ref int now)
         {
             // get arguments
 

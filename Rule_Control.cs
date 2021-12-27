@@ -1,5 +1,4 @@
-﻿using Serilog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -64,7 +63,6 @@ namespace BatchRename
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.Error(ex.Message);
             }
         }
 

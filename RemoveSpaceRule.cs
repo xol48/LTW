@@ -9,7 +9,7 @@ namespace BatchRename
 {
     class RemoveSpaceRule:Rules
     {
-        public string ClassName => "RemoveSpaces";
+        public string ClassName => "RemoveSpacesRule";
 
         public List<string> KeyWord =>
             new List<string>() { ClassName };
@@ -31,7 +31,7 @@ namespace BatchRename
             return result;
         }
 
-        public string Process(string inputString, bool isFilename)
+        public string Process(string inputString, bool isFilename, ref int now)
         {
 
 

@@ -59,3 +59,19 @@ C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\obj\Debug\BatchRename.csp
 C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\obj\Debug\BatchRename.csproj.CopyComplete
 C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\obj\Debug\BatchRename.exe
 C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\obj\Debug\BatchRename.pdb
+E:\New folder (3)\Source code\BatchRename\obj\Debug\BatchRename.csproj.AssemblyReference.cache
+E:\New folder (3)\Source code\BatchRename\obj\Debug\AddPrefixControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\AddSuffixControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\ChangeExtentionControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\LC_RS_Control.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\MainWindow.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\OptionsWindow.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\PascalCaseNameControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\RemoveSpaceControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\ReplaceControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\App.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Debug\BatchRename_MarkupCompile.cache
+E:\New folder (3)\Source code\BatchRename\obj\Debug\BatchRename_MarkupCompile.lref
+E:\New folder (3)\Source code\BatchRename\obj\Debug\BatchRename.exe
+E:\New folder (3)\Source code\BatchRename\obj\Debug\BatchRename.pdb

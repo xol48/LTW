@@ -29,7 +29,7 @@ namespace BatchRename
         /// <param name="inputString">string to be changed</param>
         /// <param name="isFilename">is this string is a filename</param>
         /// <returns>string changed to</returns>
-        string Process(string inputString, bool isFilename);
+        string Process(string inputString, bool isFilename, ref int now);
 
         /// <summary>
         /// self create with list of arguments

@@ -7,72 +7,49 @@
         xmlns:control = "clr-namespace:BatchRename"
         xmlns:drawing="clr-namespace:System.Drawing;assembly=System.Drawing"
         mc:Ignorable="d"
-        Title="Batch Rename Application" Height="510" Width="1010"
-        x:Name="BatchRenameWindow"
-        >
-    
+        Title="Batch Rename Application" Height="510" Width="1010" Background="AntiqueWhite"
+        x:Name="BatchRenameWindow" >
     <Grid Name="MainGrid">
-       
         <DockPanel>
-
-            <ToolBarTray Height="40" Margin="0,0,0,10" DockPanel.Dock="Top">
+            <ToolBarTray Height="40" Margin="0,0,0,5" DockPanel.Dock="Top">
                 <ToolBar>
-                    <Separator></Separator>
                     <Button Name="RefreshButton" Click="RefreshButton_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/Refresh.ico" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                            <Image Source="/Images/Refresh.ico" Width="30" Height="30" Margin="5,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Refresh" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Separator></Separator>
-                    <Button Name="OpenButton" Click="OpenButtonAddList_click">
+                    <Button Name="OpenButton" Click="OpenButtonChoiceList_click">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/Open.png" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                            <Image Source="/Images/Open.png" Width="30" Height="30" Margin="5,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Open" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-                    <Separator></Separator>
-                    <Button Name="SaveButton" Click="SaveButtonAddList_Click">
+                    <Button Name="SaveButton" Click="SaveButtonChoiceList_Click">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/Save.jpg" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                            <Image Source="/Images/Save.jpg"  Width="30" Height="30" Margin="5,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Save" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
-
-
-
                 </ToolBar>
             </ToolBarTray>
-
-            
-
-            <TabControl Name="ArgumentTabControl" 
-                        Width="250" Margin="0,0,40,0" DockPanel.Dock="Left" 
-                        Background="AliceBlue" Height="429" VerticalAlignment="Top">
-
+            <TabControl Name="ArgumentTabControl" Width="250" Margin="0,0,40,0" DockPanel.Dock="Left" 
+                        Background="Aquamarine" Height="429" VerticalAlignment="Top">
                 <TabItem>
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/Rules.png" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                            <Image Source="/Images/Rules.png" Width="40" Height="40" Margin="0,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Rules" VerticalAlignment="Center"/>
                         </StackPanel>
                     </TabItem.Header>
-                    
                     <DockPanel>
-
                         <Grid Name="UserControlGrid" Height="160"
                               DockPanel.Dock="Bottom" Margin="0,10,0,0"></Grid>
-
-                        <ListView Name="ActionsListView" DockPanel.Dock="Top">
-
+                        <ListView Name="RulesListView" DockPanel.Dock="Top" >
                             <ListView.Resources>
                                 <Style TargetType="ListViewItem">
                                     <Style.Triggers>
@@ -89,106 +66,65 @@
 
                                 </Style>
                             </ListView.Resources>
-
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <Button Width="230" HorizontalContentAlignment="Left" Background="Aqua"
-                                            Click="ActionButton_Click">
-
+                                            Click="RuleButton_Click">
                                         <StackPanel Orientation="Horizontal">
 
-                                            <Button Content="{Binding ExpandState}"
-                                                    Width="20" Margin="0,0,10,0" 
+                                            <Button  Width="20" Margin="0,0,10,0" 
                                                     Click="ExpandButton_Click"></Button>
-
                                             <TextBlock 
                                                 Text="{Binding Description, 
-                                                Converter={x:Static local:ActionToTitleConverter.Instance}}" 
+                                                Converter={x:Static local:NameToTitleConverter.Instance}}" 
                                                 HorizontalAlignment="Center"></TextBlock>
-
                                         </StackPanel>
-
                                     </Button>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
-
-
                         </ListView>
-
-
-                        
-
-
                     </DockPanel>
                 </TabItem>
-
                 <TabItem>
-
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/Choice.png" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                            <Image Source="/Images/Choice.png" Width="30" Height="30" Margin="0,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Choiced" VerticalAlignment="Center"/>
                         </StackPanel>
                     </TabItem.Header>
-
                     <DockPanel>
-                        
-
-
-                        <ListView Name="AddListListView"
-                                        DockPanel.Dock="Top">
+                        <ListView Name="AddListListView" DockPanel.Dock="Top">
                             <ListView.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Remove" 
                                               Click="RemoveMenuContextAddList_Click">
-
-                                        <MenuItem.Icon>
-                                            <Image Source="{Binding Images.RemoveIcon[0].Value}" 
-                                                RenderOptions.BitmapScalingMode="HighQuality"/>
-                                        </MenuItem.Icon>
                                     </MenuItem>
-
-                                 
-                                              
                                 </ContextMenu>
                             </ListView.ContextMenu>
-
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding Description}">
-
                                     </TextBlock>
                                 </DataTemplate>
                             </ListView.ItemTemplate>
                         </ListView>
                     </DockPanel>
-
                 </TabItem>
-
             </TabControl>
-
-
-
 
             <TabControl Name="ResultTabControl" 
                     DockPanel.Dock="Right"
                     Background="AliceBlue">
-
                 <TabItem >
                     <TabItem.Header>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/Images/File.ico" 
-                                           Width="40" Height="40" Margin="0,0,5,0"
+                            <Image Source="/Images/File.ico" Width="40" Height="40" Margin="0,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Files" VerticalAlignment="Center"/>
                         </StackPanel>
                     </TabItem.Header>
-                    
                     <DockPanel>
-                        
-
                         <StackPanel Orientation="Horizontal" 
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                     DockPanel.Dock="Bottom" Margin="0,10,0,0">
@@ -196,31 +132,20 @@
                             <Button Width="120" Height="40" Margin="0,0,10,0"
                                     HorizontalAlignment="Right"
                                     Click="AddFileButton_Click">
-
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Images/Add.png" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
+                                    <Image Source="/Images/Add.png" Width="30" Height="30" Margin="0,0,5,0"
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <TextBlock Text="Add" VerticalAlignment="Center"/>
                                 </StackPanel>
-
                             </Button>
                             <Button 
                                     Width="120" Height="40" Margin="0,0,10,0"
                                     HorizontalAlignment="Right"
                                     Click="PreviewFileButton_Click">
-
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="{Binding Images.PreviewIcon[0].Value}" 
-                                           Width="30" Height="30" Margin="0,0,5,0"
-                                           RenderOptions.BitmapScalingMode="HighQuality"/>
-                                    <TextBlock Text="Preview" VerticalAlignment="Center"/>
-                                </StackPanel>
+                                <TextBlock Text="Preview" VerticalAlignment="Center"/>
                             </Button>
-
                             <Button 
-                                    Width="120" Height="40"
-                                    HorizontalAlignment="Right"
+                                    Width="120" Height="40"  HorizontalAlignment="Right"
                                     Click="BatchFileButton_Click">
 
                                 <StackPanel Orientation="Horizontal">
@@ -230,25 +155,12 @@
                                     <TextBlock Text="Batch" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-
                         </StackPanel>
-
                         <ListView Name="FileListView" DockPanel.Dock="Top">
                             <ListView.ContextMenu>
                                 <ContextMenu>
-                                 
-
                                     <MenuItem Header="Remove" Click="RemoveMenuContextFiles_Click">
-                                        <MenuItem.Icon>
-                                            <Image Source="{Binding Images.RemoveIcon[0].Value}" 
-                                                RenderOptions.BitmapScalingMode="HighQuality"/>
-                                        </MenuItem.Icon>
                                     </MenuItem>
-
-                                 
-
-                                    
-
                                 </ContextMenu>
                             </ListView.ContextMenu>
                             <ListView.View>
@@ -261,27 +173,21 @@
                                             DisplayMemberBinding="{Binding Path}" />
                                     <GridViewColumn Header="Batch State" Width="150" 
                                             DisplayMemberBinding="{Binding BatchState}" />
-
                                 </GridView>
                             </ListView.View>
                         </ListView>
-
                     </DockPanel>
                 </TabItem>
-
                 <TabItem>
                     <TabItem.Header>
-                       
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Images/Folder.ico" 
                                         Width="40" Height="40" Margin="0,0,5,0"
                                         RenderOptions.BitmapScalingMode="HighQuality"/>
                             <TextBlock Text="Folders" VerticalAlignment="Center"/>
                         </StackPanel>
-                   
                     </TabItem.Header>
                     <DockPanel>
-
                         <StackPanel Orientation="Horizontal" 
                                     HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                     DockPanel.Dock="Bottom" Margin="0,10,0,0">
@@ -296,14 +202,11 @@
                                            RenderOptions.BitmapScalingMode="HighQuality"/>
                                     <TextBlock Text="Add" VerticalAlignment="Center"/>
                                 </StackPanel>
-
                             </Button>
-
                             <Button 
                                     Width="120" Height="40" Margin="0,0,10,0"
                                     HorizontalAlignment="Right"
                                     Click="PreviewFolderButton_Click">
-
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="{Binding Images.PreviewIcon[0].Value}" 
                                            Width="30" Height="30" Margin="0,0,5,0"
@@ -311,7 +214,6 @@
                                     <TextBlock Text="Preview" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-
                             <Button 
                                     Width="120" Height="40"
                                     HorizontalAlignment="Right"
@@ -324,25 +226,13 @@
                                     <TextBlock Text="Batch" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-
                         </StackPanel>
-
                         <ListView Name="FolderListView" DockPanel.Dock="Top">
                             <ListView.ContextMenu>
                                 <ContextMenu>
-                                    
 
                                     <MenuItem Header="Remove" Click="RemoveMenuContextFolders_Click">
-                                        <MenuItem.Icon>
-                                            <Image Source="{Binding Images.RemoveIcon[0].Value}" 
-                                                RenderOptions.BitmapScalingMode="HighQuality"/>
-                                        </MenuItem.Icon>
                                     </MenuItem>
-
-                                   
-
-                                    
-                                    
                                 </ContextMenu>
                             </ListView.ContextMenu>
                             <ListView.View>
@@ -358,15 +248,9 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
-
                     </DockPanel>
                 </TabItem>
             </TabControl>
-
-
-
-
-
         </DockPanel>
     </Grid>
 </Window>

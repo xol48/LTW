@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\obj\Debug\
+E:\New folder (3)\Source code\BatchRename\obj\Debug\
 BatchRename
 none
 false
 DEBUG;TRACE
-C:\Users\khacv\Desktop\WP.Project1\1753102\BatchRename\App.xaml
-71570446351
+E:\New folder (3)\Source code\BatchRename\App.xaml
+8172461754
 
-28-710777894
-17-1209253621
-MainWindow.xaml;MoveControl.xaml;NameNormalizeControl.xaml;NewCaseControl.xaml;OptionsWindow.xaml;ReplaceControl.xaml;UniqueNameControl.xaml;
+25-2135263120
+151984215308
+AddPrefixControl.xaml;AddSuffixControl.xaml;ChangeExtentionControl.xaml;LC_RS_Control.xaml;MainWindow.xaml;PascalCaseNameControl.xaml;RemoveSpaceControl.xaml;ReplaceControl.xaml;
 
 True
 

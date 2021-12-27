@@ -63,6 +63,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCounterControl.xaml.cs">
+      <DependentUpon>AddCounterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddCounterRule.cs" />
     <Compile Include="Rule_Control.cs" />
     <Compile Include="AddPrefixControl.xaml.cs">
       <DependentUpon>AddPrefixControl.xaml</DependentUpon>
@@ -78,15 +82,11 @@
       <DependentUpon>ChangeExtentionControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Converters.cs" />
-    <Compile Include="FileIO.cs" />
     <Compile Include="Rules.cs" />
     <Compile Include="LC_RS_Control.xaml.cs">
       <DependentUpon>LC_RS_Control.xaml</DependentUpon>
     </Compile>
     <Compile Include="LC_RS_Rule.cs" />
-    <Compile Include="OptionsWindow.xaml.cs">
-      <DependentUpon>OptionsWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PascalCaseNameControl.xaml.cs">
       <DependentUpon>PascalCaseNameControl.xaml</DependentUpon>
     </Compile>
@@ -100,6 +100,10 @@
     </Compile>
     <Compile Include="ReplaceRule.cs" />
     <Compile Include="UserDefinedType.cs" />
+    <Page Include="AddCounterControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddPrefixControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,10 +132,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="OptionsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="PascalCaseNameControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

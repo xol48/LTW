@@ -123,13 +123,11 @@ E:\New folder (3)\Source code\BatchRename\bin\Release\BatchRename.exe
 E:\New folder (3)\Source code\BatchRename\bin\Release\BatchRename.pdb
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename.csproj.AssemblyReference.cache
 E:\New folder (3)\Source code\BatchRename\obj\Release\MainWindow.g.cs
-E:\New folder (3)\Source code\BatchRename\obj\Release\OptionsWindow.g.cs
 E:\New folder (3)\Source code\BatchRename\obj\Release\App.g.cs
 E:\New folder (3)\Source code\BatchRename\obj\Release\GeneratedInternalTypeHelper.g.cs
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename_MarkupCompile.cache
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename_MarkupCompile.lref
 E:\New folder (3)\Source code\BatchRename\obj\Release\MainWindow.baml
-E:\New folder (3)\Source code\BatchRename\obj\Release\OptionsWindow.baml
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename.g.resources
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename.Properties.Resources.resources
 E:\New folder (3)\Source code\BatchRename\obj\Release\BatchRename.csproj.GenerateResource.cache
@@ -151,3 +149,5 @@ E:\New folder (3)\Source code\BatchRename\obj\Release\LC_RS_Control.g.cs
 E:\New folder (3)\Source code\BatchRename\obj\Release\LC_RS_Control.baml
 E:\New folder (3)\Source code\BatchRename\obj\Release\ChangeExtentionControl.g.cs
 E:\New folder (3)\Source code\BatchRename\obj\Release\ChangeExtentionControl.baml
+E:\New folder (3)\Source code\BatchRename\obj\Release\AddCounterControl.g.cs
+E:\New folder (3)\Source code\BatchRename\obj\Release\AddCounterControl.baml
